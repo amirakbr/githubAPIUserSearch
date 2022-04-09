@@ -1,0 +1,279 @@
+@import './Basement/Reset' ; 
+@import './Ultility/Variable' ;
+@mixin centered__item {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: max-content;
+}
+body {
+    background: linear-gradient(135deg, #00f3ff 0%, #54aaff 81%);
+    height: 100vh;
+    overflow: hidden;
+    .eror {
+        width: 100%;
+        height: 20rem;
+        display: flex ; 
+        justify-content: center ; 
+        align-items: center ; 
+        background-color: white;
+        font-size: $font-size-sub-large;
+        margin-top: 3rem;
+    }
+    .overlay {
+        width: 100%;
+        height: 30rem ; 
+        background-color: white ; 
+        display: flex ; 
+        justify-content: center ; 
+        align-items: center ; 
+        margin-top: 3rem;
+        div{
+            width: 8rem;
+            height: 8rem ; 
+            border: .4rem solid $light-gray-scale;
+            border-bottom: .4rem solid #0072fe;
+            border-radius: 50% ; 
+            animation: rot 1s linear infinite; 
+        }
+    }
+    .githubinput__banner{
+        @include centered__item ;
+        margin: 1rem auto;
+        padding: 2rem 6rem;
+        background-color: #00abff;
+        border: .1rem solid #1baedb;
+        border-radius: 2rem;
+        box-shadow: 0rem 0rem 4rem 3rem #7ce7ff;
+        font-size: 1.3rem;
+        color: white;
+        opacity: 0;
+        transform: translateY(-10rem);
+        animation: apear .5s linear forwards ; 
+    }
+    .githubinput__Catcher {
+        @include centered__item ;
+        margin:0 auto;
+        padding: 2rem 5rem;
+        background-color: #00abff;
+        border: .1rem solid #1baedb;
+        border-radius: 2rem;
+        color: white;
+        opacity: 0;
+        transform: translateY(-10rem);
+        animation: apear .5s .8s linear forwards ; 
+        form {
+            width: 100%;
+            fieldset {
+                label {
+                    font-size: 3rem;
+                    margin-right: 2rem;
+                }
+                input {
+                    width: 20rem;
+                    padding: .5rem ;
+                    padding-left: .7rem;
+                    border: .2rem solid white;
+                    @include placehol(white) ;
+                    font-size: 2rem;
+                    color: white;
+                    transition: all .5s ease-in-out;
+                    border-radius: 1rem;
+                    &:focus {
+                        padding-left: 1.5rem;
+                    }
+                }
+                button {
+                    width: max-content;
+                    padding: .5rem 2rem;
+                    color: white;
+                    font-size: 2rem;
+                    border: .2rem solid white;
+                    margin-left: 2rem;
+                    border-radius: 1rem;
+                }
+            }
+        }
+    }
+
+
+    .user__card {
+        margin: 0 auto;
+        margin-top: 1rem;
+        padding: 2.5rem 5rem;
+        background-color: white;
+        width: max-content;
+        border-radius: 3rem;
+        .user__card--container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: row;
+            .user__image {
+                width: 17rem;
+                border-radius: 50%;
+                img {
+                    border-radius: 50%;
+                    padding: .5rem;
+                    border: .3rem solid #00f3ff;
+                    width: 17rem;
+                    height: 17rem;
+                }
+                .hireable {
+                    position: absolute;  
+                    bottom: -21rem;
+                    background-color: $light-gray-scale;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 0rem .5rem .5rem .5rem;
+                    border-radius: 2rem;
+                    &::before {
+                        position: absolute;
+                        content: "";
+                        display: block;
+                        border: 2rem solid #7ce7ff;
+                        border-left: 2rem solid transparent;
+                        border-bottom:2rem solid transparent;
+                        transform: rotate(-45deg);
+                        top: -1rem;
+                        left: 6rem;
+                    }
+                    .hireable__title {
+                        font-size: $font-size-sub-normal;
+                        z-index: +100;
+                        width: 100%;
+                        text-align: center;
+                        background-color: $light-gray-scale;
+                        padding: .5rem 0 0 0;
+                        border-radius: 2rem;
+                    }
+                    .hireable__content {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-top: 1rem;
+                        img {
+                            width: 15rem;
+                            height: 15rem;
+                            border: none;
+                            border-radius: 3rem;
+                        }
+                        p {
+                            font-size: $font-size-sub-normal;
+                            width: 15rem;
+                            margin-left: 2rem;
+                        }
+                        .hireable__github__link {
+                            color: #0072fe;
+                            font-size: $font-size-normal;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+            .varifyimage {
+                &::after {
+                    position: absolute;
+                    width: 4rem;
+                    height: 4rem;
+                    padding: 2rem;
+                    background-color: #00abff;
+                    color: white;
+                    content: "\f00c";
+                    font-family: "Font Awesome 6 Free";
+                    font-weight: 900;
+                    display: flex ;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: $font-size-large;
+                    right: 1rem;
+                    bottom: 0;
+                    border-radius: 50%;
+                    z-index: +100;
+                    border: .5rem solid white;
+                }
+            }
+            .user__info--container {
+                margin-right: 10rem;
+                margin-left: 4rem;
+                .user--name {
+                    font-size: $font-size-sup-normal;
+                }
+                .user--id {
+                    font-size: $font-size-sub-normal;
+                    margin-top: 1rem;
+                    margin-left: .2rem;
+                    color: black;
+                    a {
+                        color: $gray-scale;
+                    }
+                }
+                .user__bio {
+                    font-size: $font-size-normal;
+                    line-height: 3rem;
+                    margin-top: .5rem;
+                    width: 65rem;
+                }
+                .user__work--station {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    margin-top: 2rem;
+                    .work__container {
+                        display: flex;
+                        align-items: center;
+                        margin-right: 5rem;
+                        .workcount--count {
+                            font-size: $font-size-normal;
+                            margin-right: 1rem;
+                        }
+                        .workcount--title {
+                            font-size: $font-size-sup-normal;
+                        }
+                    }
+                }
+            }
+            .user__tools {
+                display: flex ; 
+                align-items: center;
+                justify-content: center;
+                div {
+                    padding: 1rem 2rem;
+                    background-color: royalblue;
+                    font-size: $font-size-sub-normal;
+                    border-radius: 1rem;
+                }
+                .user__contact {
+                    margin-right: 2rem;
+                    background-color: #ebecf0;
+                    a {
+                        color: $dark--clr;
+                    }
+                }
+                .user__follow {
+                    background-color: #0072fe;
+                    a {
+                        color: $light--clr;
+                    }
+                }
+            }
+        }
+    }
+}
+@keyframes apear {
+    0%{}
+    100%{
+        opacity: 1;
+        transform: translateY(0rem);
+    }
+}
+@keyframes rot {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

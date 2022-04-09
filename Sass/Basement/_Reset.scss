@@ -1,0 +1,100 @@
+/*
+
+.darkbody {
+    background: linear-gradient(141deg , rgb(28, 0, 73) 0% , $dark--purple--backgrnd--clr 51% , rgb(28, 0, 73) 75%);
+}
+.lightbody {
+    background: linear-gradient(141deg , #fff 0% , #eaeaea 51% , #fff 75%);
+}
+
+
+.btn{
+    color: white !important; 
+    background-color: blueviolet;
+    padding: .7em 1.5em;
+    border-radius: 1rem ;
+    font-size: 1.6rem !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all .4s ease-in-out;
+    border: .2em solid white;
+    &:hover {
+        border: .2em solid blueviolet;
+        box-shadow: 0.1rem 1.1rem 1.1rem 0.1rem #00000082;
+        background-color: white;
+        color: black !important;
+    }
+}
+
+*/
+* , 
+*::after , 
+*::before {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    box-sizing: border-box;
+    border: none;
+}
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+body{
+    font-size: 1.5rem;
+    overflow-x: hidden;
+}
+img {
+    width: 100%;
+    height: 100%;
+}
+button , input{
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0);
+}
+h1 ,
+h2 , 
+h3 ,
+h4 , 
+h5 ,
+h6 {
+    font-family: 'Roboto' , sans-serif;
+}
+p , 
+span , 
+ul , 
+li , 
+label , 
+input , 
+a{
+    font-family: 'Roboto' , sans-serif;
+}
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+div , section {
+    cursor: pointer;
+}
+@mixin placehol($clrr) {
+    ::-webkit-input-placeholder { 
+        color: $clrr;
+    }
+    :-moz-placeholder { 
+        color: $clrr;
+       opacity:  1;
+    }
+    ::-moz-placeholder { 
+        color: $clrr;
+       opacity:  1;
+    }
+    :-ms-input-placeholder { 
+        color: $clrr;
+    }
+}
